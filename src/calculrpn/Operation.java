@@ -9,7 +9,7 @@ public enum Operation {
 	},
 	MOINS ('-'){
 		public double eval(double op1, double op2) {
-			System.out.print(op2 + " - " + op1);
+			System.out.print(op1 + " - " + op2);
 			return (op1 * 1000 - op2 * 1000) / 1000;
 		}
 	},
