@@ -19,8 +19,7 @@ public class MoteurRPN {
 	 * @throws RPNException si la valeur du double n'est pas compris dans l'intervalle [ MIN_VALUE, MAX_VALUE ] en valeur absolue
 	 */
 	public void addOperande(double d) throws RPNException {
-		double tmp = Math.abs(d);
-		if(tmp > MAX_VALUE || tmp < MIN_VALUE) throw new RPNException(d);
+		if(d > MAX_VALUE || d < MIN_VALUE) throw new RPNException(d);
 		operandes.push(d);
 	}
 	
@@ -51,7 +50,11 @@ public class MoteurRPN {
 	public static int getMIN_VALUE() {
 		return MIN_VALUE;
 	}
-
+	
+	/**
+	 * set as absolute value of param 
+	 * @param MIN_VALUE nouvelle valeur pour la borne inférieur
+	 */
 	public static void setMIN_VALUE(int MIN_VALUE) {
 		MoteurRPN.MIN_VALUE = Math.abs(MIN_VALUE);
 	}
@@ -59,7 +62,11 @@ public class MoteurRPN {
 	public static int getMAX_VALUE() {
 		return MAX_VALUE;
 	}
-
+	
+	/**
+	 * set as absolute value of param 
+	 * @param MAX_VALUE nouvelle valeur pour la borne supérieur
+	 */
 	public static void setMAX_VALUE(int MAX_VALUE) {
 		MoteurRPN.MAX_VALUE = Math.abs(MAX_VALUE);
 	}
